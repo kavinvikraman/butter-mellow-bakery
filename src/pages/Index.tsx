@@ -11,11 +11,12 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { CartDrawer, type CartItem } from "@/components/CartDrawer";
-import type { Cake } from "@/data/cakes";
+import type { Cake, CategoryKey } from "@/data/cakes";
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<CategoryKey>("all");
 
   const addToCart = (cake: Cake) => {
     setCart((prev) => {
@@ -39,8 +40,12 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Categories />
-        <Featured onAdd={addToCart} />
+        <Categories selected={selectedCategory} onSelect={setSelectedCategory} />
+        <Featured
+          onAdd={addToCart}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+        />
         <CustomCake />
         <Testimonials />
         <Gallery />
