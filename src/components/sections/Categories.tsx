@@ -1,7 +1,12 @@
-import { categories } from "@/data/cakes";
+import { categories, type CategoryKey } from "@/data/cakes";
 import { CategoryCard } from "@/components/CategoryCard";
 
-export const Categories = () => (
+type Props = {
+  selected: CategoryKey;
+  onSelect: (key: CategoryKey) => void;
+};
+
+export const Categories = ({ selected, onSelect }: Props) => (
   <section id="categories" className="py-24 md:py-32 bg-soft">
     <div className="container">
       <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
@@ -11,13 +16,35 @@ export const Categories = () => (
             Cakes for every <em className="text-gradient-gold">occasion</em>
           </h2>
         </div>
-        <p className="text-muted-foreground max-w-sm">
-          From quiet birthdays to grand weddings — find the perfect centerpiece.
-        </p>
+        <div className="flex flex-col items-start md:items-end gap-3 max-w-sm">
+          <p className="text-muted-foreground">
+            From quiet birthdays to grand weddings — find the perfect centerpiece.
+          </p>
+          {selected !== "all" && (
+            <button
+              onClick={() => onSelect("all")}
+              className="text-xs uppercase tracking-[0.2em] text-primary hover:underline"
+            >
+              Clear filter — show all
+            </button>
+          )}
+        </div>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
         {categories.map((c) => (
-          <CategoryCard key={c.name} {...c} />
+          <CategoryCard
+            key={c.key}
+            name={c.name}
+            desc={c.desc}
+            image={c.image}
+            active={selected === c.key}
+            onClick={() => {
+              onSelect(selected === c.key ? "all" : c.key);
+              setTimeout(() => {
+                document.getElementById("featured")?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+          />
         ))}
       </div>
     </div>
