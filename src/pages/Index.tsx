@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -11,45 +11,15 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { CartDrawer, type CartItem } from "@/components/CartDrawer";
-import type { Cake, CategoryKey } from "@/data/cakes";
-import { apiUrl } from "@/lib/api";
+import { featuredCakes, type Cake, type CategoryKey } from "@/data/cakes";
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey>("all");
-  const [cakes, setCakes] = useState<Cake[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadCakes = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch(apiUrl("/cakes"));
-        if (!response.ok) {
-          throw new Error(`Failed to load cakes: ${response.status}`);
-        }
-
-        const data = (await response.json()) as Cake[];
-        const normalizedCakes = data.map((cake) => ({
-          ...cake,
-          image: cake.image.startsWith("http") ? cake.image : apiUrl(cake.image),
-        }));
-
-        setCakes(normalizedCakes);
-      } catch (err) {
-        console.error("Failed to fetch cakes", err);
-        setError("We could not load the cake menu right now. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadCakes();
-  }, []);
+  const cakes: Cake[] = featuredCakes;
+  const loading = false;
+  const error: string | null = null;
 
   const addToCart = (cake: Cake) => {
     setCart((prev) => {
