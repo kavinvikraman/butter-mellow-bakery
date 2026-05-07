@@ -25,7 +25,7 @@ export const Contact = () => {
           <ul className="space-y-4 pt-4">
             <li className="flex items-center gap-4">
               <span className="h-11 w-11 rounded-full bg-blush grid place-items-center"><Phone className="h-4 w-4 text-primary" /></span>
-              <div><p className="text-xs text-muted-foreground">Call us</p><p>+1 (555) 240-2014</p></div>
+              <div><p className="text-xs text-muted-foreground">Call us</p><p>+91 89408 51331</p></div>
             </li>
             <li className="flex items-center gap-4">
               <span className="h-11 w-11 rounded-full bg-blush grid place-items-center"><Mail className="h-4 w-4 text-primary" /></span>
@@ -33,7 +33,18 @@ export const Contact = () => {
             </li>
             <li className="flex items-center gap-4">
               <span className="h-11 w-11 rounded-full bg-blush grid place-items-center"><MapPin className="h-4 w-4 text-primary" /></span>
-              <div><p className="text-xs text-muted-foreground">Visit</p><p>14 Linden Lane, Brooklyn</p></div>
+              <div>
+                <p className="text-xs text-muted-foreground">Visit</p>
+                <p>Thudiyalur</p>
+                <a
+                  href="https://g.page/r/CVYVe_-wMG53EBM/review"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  View location and Google reviews
+                </a>
+              </div>
             </li>
           </ul>
         </div>

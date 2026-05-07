@@ -9,7 +9,7 @@ export const Hero = () => (
     <div className="container relative grid md:grid-cols-2 gap-12 md:gap-16 items-center">
       <div className="space-y-7 animate-fade-in">
         <span className="inline-block text-xs uppercase tracking-[0.3em] text-primary px-4 py-2 rounded-full bg-card/70 backdrop-blur shadow-soft">
-          Artisan Bakery · Est. 2014
+          Artisan Bakery · Est. 2025
         </span>
         <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-foreground">
           Crafting <em className="text-gradient-gold not-italic">Sweet</em><br />
@@ -21,9 +21,6 @@ export const Hero = () => (
           Indulgence, gently elevated.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
-          <Button size="lg" className="rounded-full px-8 h-12 bg-foreground text-background hover:bg-foreground/90">
-            Order Now
-          </Button>
           <Button
             size="lg"
             variant="outline"

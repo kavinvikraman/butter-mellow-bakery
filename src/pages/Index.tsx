@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -17,6 +17,33 @@ const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey>("all");
+  const [cakes, setCakes] = useState<Cake[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadCakes = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch("http://localhost:5000/cakes");
+        if (!response.ok) {
+          throw new Error(`Failed to load cakes: ${response.status}`);
+        }
+
+        const data = (await response.json()) as Cake[];
+        setCakes(data);
+      } catch (err) {
+        console.error("Failed to fetch cakes", err);
+        setError("We could not load the cake menu right now. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCakes();
+  }, []);
 
   const addToCart = (cake: Cake) => {
     setCart((prev) => {
@@ -42,6 +69,9 @@ const Index = () => {
         <About />
         <Categories selected={selectedCategory} onSelect={setSelectedCategory} />
         <Featured
+          cakes={cakes}
+          loading={loading}
+          error={error}
           onAdd={addToCart}
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}

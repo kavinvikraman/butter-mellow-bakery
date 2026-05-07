@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Butter Mellow Cakes and Bakes">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6d8a8" />
+      <stop offset="100%" stop-color="#e7b46a" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)" />
+  <text x="50%" y="55%" text-anchor="middle" font-size="28" font-family="Georgia, serif" fill="#3d2b1f" font-weight="700">BM</text>
+</svg>

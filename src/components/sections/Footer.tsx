@@ -1,4 +1,8 @@
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
+
+const socialLinks = [
+  { Icon: Instagram, href: "https://www.instagram.com/buttermellow_cbe/", label: "Instagram" },
+];
 
 const cols = [
   { title: "Shop", links: ["Birthday", "Wedding", "Custom", "Cupcakes"] },
@@ -16,8 +20,15 @@ export const Footer = () => (
             Handmade cakes baked with intention. Sweet moments, slowly perfected.
           </p>
           <div className="flex gap-3 pt-2">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="h-10 w-10 rounded-full border border-background/20 grid place-items-center hover:bg-primary hover:border-primary transition-colors">
+            {socialLinks.map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noreferrer" : undefined}
+                className="h-10 w-10 rounded-full border border-background/20 grid place-items-center hover:bg-primary hover:border-primary transition-colors"
+                aria-label={label}
+              >
                 <Icon className="h-4 w-4" />
               </a>
             ))}

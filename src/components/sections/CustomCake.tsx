@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { CustomCakeModal } from "@/components/CustomCakeModal";
 import customImg from "@/assets/images/custom-cake.jpg";
 
-export const CustomCake = () => (
+export const CustomCake = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
   <section className="py-24 md:py-32 bg-soft">
     <div className="container grid md:grid-cols-2 gap-12 md:gap-20 items-center">
       <div className="relative order-2 md:order-1">
@@ -34,10 +39,16 @@ export const CustomCake = () => (
             </li>
           ))}
         </ul>
-        <Button size="lg" className="rounded-full px-8 h-12 bg-foreground text-background hover:bg-foreground/90">
+        <Button 
+          size="lg" 
+          className="rounded-full px-8 h-12 bg-foreground text-background hover:bg-foreground/90"
+          onClick={() => setModalOpen(true)}
+        >
           Customize Your Cake
         </Button>
       </div>
     </div>
+    <CustomCakeModal open={modalOpen} onOpenChange={setModalOpen} />
   </section>
-);
+  );
+};

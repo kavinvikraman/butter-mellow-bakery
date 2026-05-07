@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { featuredCakes, categories, type Cake, type CategoryKey } from "@/data/cakes";
+import { categories, type Cake, type CategoryKey } from "@/data/cakes";
 import { ProductCard } from "@/components/ProductCard";
 import { cn } from "@/lib/utils";
 
 type Props = {
+  cakes: Cake[];
+  loading: boolean;
+  error: string | null;
   onAdd: (cake: Cake) => void;
   selectedCategory: CategoryKey;
   onSelectCategory: (key: CategoryKey) => void;
@@ -16,17 +19,17 @@ const filterChips: { key: CategoryKey; label: string }[] = [
   ...categories.map((c) => ({ key: c.key as CategoryKey, label: c.name })),
 ];
 
-export const Featured = ({ onAdd, selectedCategory, onSelectCategory }: Props) => {
+export const Featured = ({ cakes, loading, error, onAdd, selectedCategory, onSelectCategory }: Props) => {
   const [q, setQ] = useState("");
 
   const list = useMemo(
     () =>
-      featuredCakes.filter((c) => {
+      cakes.filter((c) => {
         const matchesCategory = selectedCategory === "all" || c.category === selectedCategory;
         const matchesQuery = c.name.toLowerCase().includes(q.toLowerCase());
         return matchesCategory && matchesQuery;
       }),
-    [q, selectedCategory]
+    [cakes, q, selectedCategory]
   );
 
   const activeLabel = filterChips.find((f) => f.key === selectedCategory)?.label ?? "All";
@@ -85,18 +88,24 @@ export const Featured = ({ onAdd, selectedCategory, onSelectCategory }: Props) =
           })}
         </div>
 
-        <div
-          key={selectedCategory + q}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 animate-fade-in"
-        >
-          {list.map((cake) => (
-            <ProductCard key={cake.id} cake={cake} onAdd={onAdd} />
-          ))}
-        </div>
-        {list.length === 0 && (
-          <p className="text-center text-muted-foreground py-12 animate-fade-in">
-            No cakes match your filter.
-          </p>
+        {loading && <p className="text-center text-muted-foreground py-12">Loading cakes...</p>}
+        {error && <p className="text-center text-destructive py-12">{error}</p>}
+        {!loading && !error && (
+          <>
+            <div
+              key={selectedCategory + q}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 animate-fade-in"
+            >
+              {list.map((cake) => (
+                <ProductCard key={cake.id} cake={cake} onAdd={onAdd} />
+              ))}
+            </div>
+            {list.length === 0 && (
+              <p className="text-center text-muted-foreground py-12 animate-fade-in">
+                No cakes match your filter.
+              </p>
+            )}
+          </>
         )}
       </div>
     </section>
