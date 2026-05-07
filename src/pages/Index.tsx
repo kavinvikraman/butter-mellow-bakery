@@ -12,6 +12,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { CartDrawer, type CartItem } from "@/components/CartDrawer";
 import type { Cake, CategoryKey } from "@/data/cakes";
+import { apiUrl } from "@/lib/api";
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -27,13 +28,18 @@ const Index = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch("http://localhost:5000/cakes");
+        const response = await fetch(apiUrl("/cakes"));
         if (!response.ok) {
           throw new Error(`Failed to load cakes: ${response.status}`);
         }
 
         const data = (await response.json()) as Cake[];
-        setCakes(data);
+        const normalizedCakes = data.map((cake) => ({
+          ...cake,
+          image: cake.image.startsWith("http") ? cake.image : apiUrl(cake.image),
+        }));
+
+        setCakes(normalizedCakes);
       } catch (err) {
         console.error("Failed to fetch cakes", err);
         setError("We could not load the cake menu right now. Please try again later.");

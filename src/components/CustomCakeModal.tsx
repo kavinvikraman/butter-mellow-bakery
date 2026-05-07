@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { apiUrl } from "@/lib/api";
 
 type Props = {
   open: boolean;
@@ -26,7 +27,7 @@ export const CustomCakeModal = ({ open, onOpenChange }: Props) => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/custom-cake-inquiry", {
+      const response = await fetch(apiUrl("/custom-cake-inquiry"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
