@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { CheckCircle2, Instagram } from "lucide-react";
 
 const socialLinks = [
   { Icon: Instagram, href: "https://www.instagram.com/buttermellow_cbe/", label: "Instagram" },
@@ -32,6 +32,10 @@ export const Footer = () => (
                 <Icon className="h-4 w-4" />
               </a>
             ))}
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/15 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-200">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
+              FSSAI Verified
+            </div>
           </div>
         </div>
         {cols.map((c) => (

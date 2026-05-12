@@ -3,7 +3,7 @@ import wedding from "@/assets/images/cat-wedding.jpg";
 import custom from "@/assets/images/cat-custom.jpg";
 import cupcakes from "@/assets/images/cat-cupcakes.jpg";
 
-export type CategoryKey = "all" | "birthday" | "wedding" | "custom" | "cupcake";
+export type CategoryKey = "all" | "birthday" | "wedding" | "custom" | "cupcake" | "brownie";
 
 export type Cake = {
   id: string;
@@ -33,6 +33,14 @@ export const featuredCakes: Cake[] = [
   { id: "16", name: "Custom Cake", category: "custom", price: 55, image: "/cakes/custom-cake-2.jpeg" },
   { id: "17", name: "Custom Cake", category: "custom", price: 55, image: "/cakes/custom-cake-3.jpeg" },
   { id: "18", name: "Custom Cake", category: "custom", price: 55, image: "/cakes/custom-cake-4.jpeg" },
+  { id: "19", name: "Ivory Rose Wedding Cake", category: "wedding", price: 120, image: "/cakes/custom-cake-1.jpeg" },
+  { id: "20", name: "Royal Tier Wedding Cake", category: "wedding", price: 135, image: "/cakes/custom-cake-2.jpeg" },
+  { id: "21", name: "Pearl Blossom Wedding Cake", category: "wedding", price: 128, image: "/cakes/custom-cake-3.jpeg" },
+  { id: "22", name: "Elegant Lace Wedding Cake", category: "wedding", price: 140, image: "/cakes/custom-cake-4.jpeg" },
+  { id: "23", name: "Classic Fudge Brownie", category: "brownie", price: 28, image: "/cakes/cookies-1.jpeg" },
+  { id: "24", name: "Walnut Brownie", category: "brownie", price: 30, image: "/cakes/cookies-2.jpeg" },
+  { id: "25", name: "Choco Chip Brownie", category: "brownie", price: 30, image: "/cakes/cookies-3.jpeg" },
+  { id: "26", name: "Caramel Brownie", category: "brownie", price: 32, image: "/cakes/cookies-4.jpeg" },
 ];
 
 export const categories: { key: Exclude<CategoryKey, "all">; name: string; desc: string; image: string }[] = [
@@ -40,6 +48,7 @@ export const categories: { key: Exclude<CategoryKey, "all">; name: string; desc:
   { key: "wedding", name: "Wedding Cakes", desc: "Timeless tiers crafted with love", image: wedding },
   { key: "custom", name: "Custom Cakes", desc: "Designed uniquely for your moment", image: custom },
   { key: "cupcake", name: "Cupcakes & Desserts", desc: "Bite-sized indulgence, baked daily", image: cupcakes },
+  { key: "brownie", name: "Brownies", desc: "Rich cocoa squares with gooey centers", image: "/cakes/cookies-2.jpeg" },
 ];
 
 export const galleryImages = [

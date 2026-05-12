@@ -53,18 +53,18 @@ export const Navbar = ({ cartCount, onCartClick }: { cartCount: number; onCartCl
           <button
             aria-label="Search"
             onClick={() => setSearchOpen((s) => !s)}
-            className="p-2 rounded-full hover:bg-secondary transition-colors"
+            className="p-2.5 rounded-full hover:bg-secondary transition-colors"
           >
-            <Search className="h-4 w-4" />
+            <Search className="h-5 w-5" />
           </button>
           <button
             aria-label="Cart"
             onClick={onCartClick}
-            className="relative p-2 rounded-full hover:bg-secondary transition-colors"
+            className="relative p-2.5 rounded-full hover:bg-secondary transition-colors"
           >
-            <ShoppingBag className="h-4 w-4" />
+            <ShoppingBag className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 h-4 w-4 text-[10px] grid place-items-center rounded-full bg-primary text-primary-foreground">
+              <span className="absolute -top-1 -right-1 h-4.5 w-4.5 text-[10px] grid place-items-center rounded-full bg-primary text-primary-foreground">
                 {cartCount}
               </span>
             )}
