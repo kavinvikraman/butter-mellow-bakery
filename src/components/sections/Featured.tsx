@@ -25,14 +25,18 @@ export const Featured = ({ cakes, loading, error, onAdd, selectedCategory, onSel
   const list = useMemo(
     () =>
       cakes.filter((c) => {
-        const matchesCategory = selectedCategory === "all" || c.category === selectedCategory;
+        const matchesCategory = selectedCategory === "all"
+          || (selectedCategory === "cakes" && ["fresh-cream", "seasonal-fruit", "chocolate", "fusion"].includes(c.category))
+          || c.category === selectedCategory;
         const matchesQuery = c.name.toLowerCase().includes(q.toLowerCase());
         return matchesCategory && matchesQuery;
       }),
     [cakes, q, selectedCategory]
   );
 
-  const activeLabel = filterChips.find((f) => f.key === selectedCategory)?.label ?? "All";
+  const activeLabel = selectedCategory === "cakes"
+    ? "Cakes"
+    : filterChips.find((f) => f.key === selectedCategory)?.label ?? "All";
 
   return (
     <section id="featured" className="py-24 md:py-32 bg-background">

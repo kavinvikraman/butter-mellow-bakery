@@ -6,6 +6,10 @@ import { About } from "@/components/sections/About";
 import { Categories } from "@/components/sections/Categories";
 import { Featured } from "@/components/sections/Featured";
 import { CustomCake } from "@/components/sections/CustomCake";
+import { FestivalCakes } from "@/components/sections/FestivalCakes";
+import { BulkOrders } from "@/components/sections/BulkOrders";
+import { Hampers } from "@/components/sections/Hampers";
+import { Menu } from "@/components/sections/Menu";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
@@ -39,7 +43,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
+      <Navbar
+        cartCount={cartCount}
+        onCartClick={() => setCartOpen(true)}
+        onCakesClick={() => {
+          setSelectedCategory("cakes");
+          setTimeout(() => document.getElementById("featured")?.scrollIntoView({ behavior: "smooth" }), 100);
+        }}
+      />
       <main>
         <Hero />
         <About />
@@ -52,6 +63,10 @@ const Index = () => {
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
+        <FestivalCakes onAdd={addToCart} />
+        <Hampers />
+        <Menu />
+        <BulkOrders />
         <CustomCake />
         <Testimonials />
         <Gallery />

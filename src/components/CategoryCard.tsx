@@ -44,8 +44,8 @@ export const CategoryCard = ({ name, desc, image, active, onClick }: Props) => (
             <h3 className="font-serif text-2xl md:text-3xl">{name}</h3>
             <p className="text-sm text-background/80 mt-1">{desc}</p>
           </div>
-          <span className="h-10 w-10 shrink-0 rounded-full bg-background text-foreground grid place-items-center transition-transform group-hover:rotate-45">
-            <ArrowUpRight className="h-4 w-4" />
+          <span className="inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-background px-3 text-xs font-medium text-foreground transition-transform group-hover:translate-x-1">
+            Explore <ArrowUpRight className="h-4 w-4" />
           </span>
         </div>
       </div>

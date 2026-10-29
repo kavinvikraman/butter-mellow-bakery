@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Butter Mellow celebration hamper</title>
+  <desc id="desc">An illustrated gift hamper with baked treats, flowers, and a ribbon.</desc>
+  <rect width="1200" height="900" fill="#f7eee7"/>
+  <circle cx="940" cy="170" r="130" fill="#f3d9d7"/>
+  <circle cx="180" cy="720" r="170" fill="#ead9c5"/>
+  <path d="M305 350h590l-70 390H375z" fill="#b98257"/>
+  <path d="M340 350h520l-55 330H395z" fill="#d5a171"/>
+  <path d="M330 405h540" stroke="#8f5e43" stroke-width="18"/>
+  <path d="M390 350c30-220 390-220 420 0" fill="none" stroke="#8f5e43" stroke-width="32"/>
+  <rect x="405" y="280" width="150" height="150" rx="18" fill="#f8d8d2"/>
+  <path d="M425 340c35-70 80-70 110 0-30 70-75 70-110 0Z" fill="#fff7ed"/>
+  <circle cx="480" cy="335" r="28" fill="#c66562"/>
+  <rect x="585" y="245" width="175" height="170" rx="18" fill="#e9c56e"/>
+  <circle cx="650" cy="325" r="48" fill="#8a4f3d"/>
+  <circle cx="720" cy="325" r="48" fill="#f4d49b"/>
+  <path d="M780 270h100v160H780z" fill="#f2a6a0"/>
+  <path d="M830 270v160M780 320h100M780 375h100" stroke="#fff4e9" stroke-width="12"/>
+  <path d="M600 530c-85 100-85 170 0 215M600 530c85 100 85 170 0 215" fill="none" stroke="#a54e5d" stroke-width="24"/>
+  <path d="M600 590c-45-90-140-80-125 15 10 65 80 75 125 15 45 60 115 50 125-15 15-95-80-105-125-15Z" fill="#c66562"/>
+  <text x="600" y="815" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#553a31">Butter Mellow hampers</text>
+</svg>

@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import cakesRouter from "./routes/cakes.js";
 import orderRouter from "./routes/order.js";
 import customCakeInquiryRouter from "./routes/customCakeInquiry.js";
+import bulkOrderInquiryRouter from "./routes/bulkOrderInquiry.js";
 
 const app = express();
 const port = 5000;
@@ -22,6 +23,7 @@ app.get("/", (_req, res) => {
 app.use("/cakes", cakesRouter);
 app.use("/order", orderRouter);
 app.use("/custom-cake-inquiry", customCakeInquiryRouter);
+app.use("/bulk-order-inquiry", bulkOrderInquiryRouter);
 
 app.listen(port, () => {
   console.log(`Butter Mellow backend running on http://localhost:${port}`);

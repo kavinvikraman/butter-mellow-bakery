@@ -8,11 +8,15 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#categories", label: "Categories" },
   { href: "#featured", label: "Cakes" },
+  { href: "#festival-cakes", label: "Festival Cakes" },
+  { href: "#hampers", label: "Hampers" },
+  { href: "#menu", label: "Menu" },
+  { href: "#bulk-orders", label: "Bulk Orders" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
 
-export const Navbar = ({ cartCount, onCartClick }: { cartCount: number; onCartClick: () => void }) => {
+export const Navbar = ({ cartCount, onCartClick, onCakesClick }: { cartCount: number; onCartClick: () => void; onCakesClick: () => void }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -41,6 +45,7 @@ export const Navbar = ({ cartCount, onCartClick }: { cartCount: number; onCartCl
             <li key={l.href}>
               <a
                 href={l.href}
+                onClick={l.label === "Cakes" ? onCakesClick : undefined}
                 className="text-sm tracking-wide text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {l.label}
@@ -92,7 +97,10 @@ export const Navbar = ({ cartCount, onCartClick }: { cartCount: number; onCartCl
               <li key={l.href}>
                 <a
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(event) => {
+                    if (l.label === "Cakes") onCakesClick();
+                    setOpen(false);
+                  }}
                   className="block py-2 text-foreground/80 hover:text-primary"
                 >
                   {l.label}

@@ -8,6 +8,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      "/order": "http://localhost:5000",
+      "/custom-cake-inquiry": "http://localhost:5000",
+      "/images": "http://localhost:5000",
+    },
     hmr: {
       overlay: false,
     },
