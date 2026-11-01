@@ -3,8 +3,8 @@ import wedding from "@/assets/images/cat-wedding.jpg";
 import custom from "@/assets/images/cat-custom.jpg";
 import cupcakes from "@/assets/images/cat-cupcakes.jpg";
 import cake1 from "@/assets/images/cake-1.jpg";
-import cake2 from "@/assets/images/cake-2.jpg";
-import cake3 from "@/assets/images/cake-3.jpg";
+import cake2 from "@/assets/images/cake-1.jpg";
+import cake3 from "@/assets/images/cake-4.jpg";
 import cake4 from "@/assets/images/cake-4.jpg";
 import cake5 from "@/assets/images/cake-5.jpg";
 import cake6 from "@/assets/images/cake-6.jpg";
@@ -14,6 +14,21 @@ import oreoCake from "@/assets/images/oreo_cake.png";
 import rasmalaiCake from "@/assets/images/rasmalai_cake.png";
 import gulabJamunCake from "@/assets/images/gulab_jamun_cake.png";
 import belgianChocolateCake from "@/assets/images/belgian_chocolate_cake.png";
+import motichoorLadooCake from "@/assets/images/motichoor_ladoo_cake.png";
+import pistachioCake from "@/assets/images/Pistachio Cake.jpeg";
+import lycheeCake from "@/assets/images/lychee_cake.jpeg";
+import strawberryCake from "@/assets/images/strawberry_cake.jpeg";
+import tenderCoconutCake from "@/assets/images/tender_coconut_cake.jpeg";
+import passionFruitCake from "@/assets/images/passion_fruit_cake.jpeg";
+import blueberryCake from "@/assets/images/blueberry_cake.jpeg";
+import snickersCake from "@/assets/images/snickers_cake.jpeg";
+import chocolateBrownieCake from "@/assets/images/chocolate_brownie_cake.jpeg";
+import chocolateOverloadCake from "@/assets/images/chocolate_overload_cake.jpeg";
+import chocolateTruffleCake from "@/assets/images/chocalte truffles cake.jpeg";
+import kitkatCake from "@/assets/images/kitkat_cake.jpeg";
+import blackForestCake from "@/assets/images/black forest.jpeg";
+import mangoCake from "@/assets/images/mango_cake.jpeg";
+import pineappleCake from "@/assets/images/pineapple_cake.jpeg";
 
 export type CategoryKey =
   | "all" | "cakes" | "fresh-cream" | "seasonal-fruit" | "chocolate" | "fusion" | "brownies"
@@ -78,9 +93,9 @@ const products = (
 });
 
 export const featuredCakes: Cake[] = [
-  ...products("fresh-cream", [["Butterscotch Cake", 1200, "per kg"], ["Black Forest Cake", 1200, "per kg"], ["Classic Vanilla Cake", 950, "per kg"], ["Pistachio Cake", 1600, "per kg"]]),
-  ...products("seasonal-fruit", [["Pineapple Cake", 1300, "per kg"], ["Strawberry Cake", 1300, "per kg"], ["Mango Cake", 1200, "per kg"], ["Blueberry Cake", 1400, "per kg"], ["Lychee Fruit Cake", 1450, "per kg"], ["Tender Coconut Cake", 1200, "per kg"], ["Guava Cake", 1200, "per kg"], ["Mixed Fruit Cake", 1500, "per kg"]]),
-  ...products("chocolate", [["Dutch Chocolate Truffle", 1500, "per kg"], ["Kit Kat Cake", 1400, "per kg"], ["Snickers Cake", 1450, "per kg"], ["Lotus Biscoff Cake", 1500, "per kg"], ["Raffaello Cake", 1500, "per kg"], ["Vancho Cake", 1600, "per kg"], ["Pistachio Cake", 1700, "per kg"], ["Chocolate Overload Cake", 1600, "per kg"], ["Oreo Cake", 1400, "per kg"], ["Belgian Chocolate Cake", 1700, "per kg"]]),
+  ...products("fresh-cream", [["Butterscotch Cake", 1200, "per kg"], ["Black Forest Cake", 1200, "per kg"], ["Classic Vanilla Cake", 950, "per kg"], ["Pistachio Cake", 1600, "per kg"], ["Vancho Cake", 1600, "per kg"], ["Mixed Fruit Cake", 1450, "per kg"], ["Passion Fruit Cake", 1400, "per kg"], ["Lychee Fruit Cake", 1450, "per kg"], ["Tender Coconut Cake", 1350, "per kg"], ["Blueberry Cake", 1550, "per kg"], ["Mango Cake", 1350, "per kg"], ["Pineapple Cake", 1350, "per kg"], ["Strawberry Cake", 1350, "per kg"]]),
+  ...products("seasonal-fruit", []),
+  ...products("chocolate", [["Chocolate Truffle Cake", 1600, "per kg"], ["Kit Kat Cake", 1400, "per kg"], ["Snickers Cake", 1450, "per kg"], ["Chocolate Brownie Cake", 1800, "per kg"], ["Chocolate Overload Cake", 1550, "per kg"], ["Lotus Biscoff Cake", 1500, "per kg"], ["Raffaello Cake", 1500, "per kg"], ["Oreo Cake", 1400, "per kg"], ["Belgian Chocolate Cake", 1700, "per kg"]]),
   ...products("fusion", [["Rasmalai Cake", 1550, "per kg"], ["Gulab Jamun Cake", 1550, "per kg"], ["Rosemilk Cake", 1850, "per kg"], ["Gulkand Cake", 1200, "per kg"], ["Motichoor Ladoo Cake", 1550, "per kg"], ["Kaju Cake", 1650, "per kg"]]),
   ...products("brownies", [["Classic Brownie", 75, "per piece"], ["Ragi Brownie", 80, "per piece"], ["Millet Brownie", 85, "per piece"], ["Walnut Brownie", 90, "per piece"], ["Biscoff Brownie", 90, "per piece"], ["Double Choco Brownie", 110, "per piece"], ["Cookie Brownie", 110, "per piece"], ["Hazelnut Nutella Brownie", 120, "per piece"], ["Brownie Gift Box (Assorted 6 pcs)", 600, "6 pieces"], ["Signature Brownie Platter (Fruit)", 600, "per platter"], ["Signature Brownie Platter (Assorted)", 750, "per platter"], ["Customized Brownie Birthday Cake (1/2 kg)", 800, "1/2 kg"], ["Customized Brownie Birthday Cake (1 kg)", 1650, "1 kg"]], brownieImages),
   ...products("cupcakes", [["Classic Vanilla", 300, "6 pieces"], ["Chocolate", 350, "6 pieces"], ["Strawberry", 350, "6 pieces"], ["Lemon Blueberry", 490, "6 pieces"], ["Pineapple", 330, "6 pieces"], ["Oreo Cupcake", 330, "6 pieces"], ["Nutella", 380, "6 pieces"], ["Biscoff", 400, "6 pieces"]], cookieImages),
@@ -97,8 +112,23 @@ export const featuredCakes: Cake[] = [
 const productImageOverrides: Record<string, string> = {
   "Oreo Cake": oreoCake,
   "Belgian Chocolate Cake": belgianChocolateCake,
+  "Chocolate Truffle Cake": chocolateTruffleCake,
+  "Kit Kat Cake": kitkatCake,
+  "Black Forest Cake": blackForestCake,
+  "Mango Cake": mangoCake,
+  "Pineapple Cake": pineappleCake,
+  "Snickers Cake": snickersCake,
+  "Chocolate Brownie Cake": chocolateBrownieCake,
+  "Chocolate Overload Cake": chocolateOverloadCake,
   "Rasmalai Cake": rasmalaiCake,
   "Gulab Jamun Cake": gulabJamunCake,
+  "Motichoor Ladoo Cake": motichoorLadooCake,
+  "Pistachio Cake": pistachioCake,
+  "Strawberry Cake": strawberryCake,
+  "Lychee Fruit Cake": lycheeCake,
+  "Tender Coconut Cake": tenderCoconutCake,
+  "Passion Fruit Cake": passionFruitCake,
+  "Blueberry Cake": blueberryCake,
 };
 
 featuredCakes.forEach((cake) => {
@@ -117,7 +147,7 @@ export const festivalCakes: FestivalCake[] = [
   festivalEntry("Rasmalai Cake", "Diwali Special Cakes", "Soft cake layers with the celebratory spirit of rasmalai.", ["Rasmalai", "Vanilla", "Pistachio"]),
   festivalEntry("Classic Pound Cake", "Christmas Cakes", "A buttery, comforting bake for a warm Christmas table.", ["Vanilla", "Fruit", "Chocolate"]),
   festivalEntry("Chocolate Pound Cake", "Christmas Cakes", "Rich cocoa flavour made for festive slices and gifting.", ["Chocolate", "Mocha", "Hazelnut"]),
-  festivalEntry("Dutch Chocolate Truffle", "New Year Cakes", "A polished chocolate centrepiece for the first celebration of the year.", ["Dark chocolate", "Milk chocolate", "Mocha"]),
+  festivalEntry("Chocolate Truffle Cake", "New Year Cakes", "A polished chocolate centrepiece for the first celebration of the year.", ["Dark chocolate", "Milk chocolate", "Mocha"]),
   festivalEntry("Pistachio Cake", "Pongal Special Cakes", "A delicate, nutty cake to complement a bright harvest celebration.", ["Pistachio", "Vanilla", "Rose"]),
   festivalEntry("Strawberry Cake", "Valentine's Day Cakes", "A soft strawberry-led celebration cake for a thoughtful surprise.", ["Strawberry", "Vanilla", "Chocolate"]),
   festivalEntry("Black Forest Cake", "Mother's Day and Father's Day Cakes", "A celebration-ready classic for the people who make every day special.", ["Chocolate", "Cherry", "Fresh cream"]),

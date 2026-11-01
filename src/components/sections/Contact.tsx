@@ -49,7 +49,7 @@ export const Contact = () => {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} className="bg-card rounded-3xl p-8 md:p-10 shadow-card space-y-4">
+        <form onSubmit={onSubmit} className="bg-card rounded-3xl p-5 sm:p-8 md:p-10 shadow-card space-y-4">
           <div>
             <label className="text-xs uppercase tracking-widest text-muted-foreground">Name</label>
             <Input required name="name" placeholder="Your full name" className="mt-2 h-12 bg-background border-border/60" />

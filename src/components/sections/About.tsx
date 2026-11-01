@@ -1,7 +1,7 @@
 import { Heart, Leaf, Sparkles } from "lucide-react";
 import cake1 from "@/assets/images/cake-1.jpg";
-import cake2 from "@/assets/images/cake-2.jpg";
-import cake3 from "@/assets/images/cake-3.jpg";
+import cake2 from "@/assets/images/cake-1.jpg";
+import cake3 from "@/assets/images/cake-4.jpg";
 
 const features = [
   { icon: Heart, image: cake1, title: "Handmade Daily", desc: "Every cake is shaped, layered and finished by our master bakers." },

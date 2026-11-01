@@ -66,11 +66,15 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   html { scroll-behavior: smooth; }
   h1, h2, h3, h4, .font-serif {
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: -0.01em;
+  }
+  button, a, input, textarea, select {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

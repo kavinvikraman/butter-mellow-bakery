@@ -98,7 +98,7 @@ export const Featured = ({ cakes, loading, error, onAdd, selectedCategory, onSel
           <>
             <div
               key={selectedCategory + q}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 animate-fade-in"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 animate-fade-in"
             >
               {list.map((cake) => (
                 <ProductCard key={cake.id} cake={cake} onAdd={onAdd} />

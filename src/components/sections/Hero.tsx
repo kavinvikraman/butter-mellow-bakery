@@ -11,7 +11,7 @@ export const Hero = () => (
         <span className="inline-block text-xs uppercase tracking-[0.3em] text-primary px-4 py-2 rounded-full bg-card/70 backdrop-blur shadow-soft">
           Artisan Bakery · Est. 2025
         </span>
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-foreground">
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl leading-[1.05] text-foreground">
           Crafting <em className="text-gradient-gold not-italic">Sweet</em><br />
           Moments with<br />
           Every <em className="italic font-light">Bite</em>
@@ -42,11 +42,11 @@ export const Hero = () => (
             height={1280}
             className="relative z-10 w-full h-full object-cover rounded-full p-3 animate-float"
           />
-          <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl px-5 py-3 shadow-card animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="absolute -bottom-3 left-2 sm:-bottom-4 sm:-left-4 bg-card rounded-2xl px-4 sm:px-5 py-2 sm:py-3 shadow-card animate-fade-in" style={{ animationDelay: "0.6s" }}>
             <p className="font-serif text-2xl text-gradient-gold">4.9 ★</p>
             <p className="text-xs text-muted-foreground">2,400+ reviews</p>
           </div>
-          <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full h-24 w-24 grid place-items-center text-center shadow-elegant animate-fade-in" style={{ animationDelay: "0.8s" }}>
+          <div className="absolute -top-2 right-0 sm:-right-2 bg-primary text-primary-foreground rounded-full h-20 w-20 sm:h-24 sm:w-24 grid place-items-center text-center shadow-elegant animate-fade-in" style={{ animationDelay: "0.8s" }}>
             <span className="font-serif text-sm leading-tight">Fresh<br/>Today</span>
           </div>
         </div>

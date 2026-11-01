@@ -17,15 +17,15 @@ export const ProductCard = ({ cake, onAdd }: Props) => (
         </span>
       )}
     </div>
-    <div className="p-5 flex items-end justify-between gap-3">
-      <div>
+    <div className="p-4 sm:p-5 flex items-end justify-between gap-3">
+      <div className="min-w-0">
         <h3 className="font-serif text-xl leading-tight">{cake.name}</h3>
         <p className="mt-1 text-xs text-muted-foreground">{cake.unit}</p>
       </div>
       <button
         onClick={() => onAdd(cake)}
         aria-label={`Order ${cake.name}`}
-        className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-foreground px-4 text-xs font-medium text-background transition-colors hover:bg-primary"
+        className="inline-flex h-10 shrink-0 items-center gap-1 rounded-full bg-foreground px-3 sm:px-4 text-[11px] sm:text-xs font-medium text-background transition-colors hover:bg-primary"
       >
         <Plus className="h-4 w-4" />
         <span>Order Now</span>
